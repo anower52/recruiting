@@ -17,8 +17,10 @@ class CreateAgentsTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('phone_number');
-            $table->string('created_by');
+            $table->string('phone_number')->nullable();
+            $table->string('district')->nullable();
+            $table->integer('created_by');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
