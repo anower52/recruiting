@@ -3,95 +3,103 @@
 @section('title', 'Agents')
 
 @section('content')
-    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-        <div class="container mx-auto px-6 py-8">
-
-            <h3 class="text-gray-700 text-3xl font-medium">Agents</h3>
-
-            <div class="flex flex-col mt-8">
-                <div class="flex justify-between">
-                    <div class="relative lg:mx-0">
-                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
-                            <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                </path>
-                            </svg>
-                        </span>
-
-                        <input class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600" type="text"
-                               placeholder="Search">
-                    </div>
-
-                    <a href="#" type="button"
-                       class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 h-10 my-auto add-agent-open-modal">
-                        Add Agent
-                    </a>
-                </div>
-
-                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-2">
-                    <div
-                        class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                        <table class="min-w-full">
-                            <thead>
-                            <tr>
-                                <th
-                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Name
-                                </th>
-                                <th
-                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Phone #
-                                </th>
-                                <th
-                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    District
-                                </th>
-                                <th
-                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Actions
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody class="bg-white">
-                            @forelse($agents as $agent)
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div
-                                            class="text-sm leading-5 text-gray-900">{{ $agent->first_name . ' ' . $agent->last_name}}</div>
-                                    </td>
-
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="text-sm leading-5 text-gray-900">{{ $agent->phone_number }}</div>
-                                    </td>
-
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="text-sm leading-5 text-gray-900">{{ $agent->district }}</div>
-                                    </td>
-
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-900">
-                                        <a href="#"
-                                           class="text-indigo-600 hover:text-indigo-900 hover:underline mr-3"
-                                           onclick="EditAgentToggleModal({{ $agent }})">Edit</a>
-                                        <a href="#"
-                                           class="text-indigo-600 hover:text-indigo-900 hover:underline"
-                                           onclick="deleteAgent({{ $agent->id }})">Delete</a>
-                                    </td>
-                                </tr>
-                            @empty
-                                <div class="flex flex-col">
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="text-sm leading-5 text-gray-900">No Result found!</div>
-                                    </td>
+    <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
+        <div class="bg-white shadow">
+            <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <div class="py-6 flex md:items-center md:justify-between lg:border-t lg:border-gray-200">
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center">
+                                    <h1 class="text-2xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">
+                                        Agents
+                                    </h1>
                                 </div>
-                            @endforelse
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-3">
-                        {{ $agents->links() }}
+                    <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
+                        <a href="#" type="button"
+                           class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 h-10 my-auto add-agent-open-modal">
+                            Add agent
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <div class="sm:block">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col mt-2">
+                        <div class="flex justify-end">
+                            <div class="relative lg:mx-0">
+                                <form action="{{ route('agent.search') }}" method="get">
+
+                                    <button class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                                        <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <input name="q" class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
+                                           type="text"
+                                           placeholder="Search" @if(!empty($search)) value="{{ $search }}" @endif>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div
+                            class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg mt-2">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead>
+                                <tr>
+                                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Name
+                                    </th>
+                                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Phone #
+                                    </th>
+                                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        District
+                                    </th>
+                                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Options
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                @forelse($agents as $agent)
+                                    <tr class="bg-white">
+                                        <td class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">{{ $agent->first_name . ' ' . $agent->last_name}}</td>
+                                        <td class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">{{ $agent->phone_number }}</td>
+                                        <td class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
+                                            {{ $agent->district }}
+                                        </td>
+
+                                        <td class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
+                                            <a href="#"
+                                               class="text-indigo-600 hover:text-indigo-900 hover:underline mr-3"
+                                               onclick="EditAgentToggleModal({{ $agent }})">Edit</a>
+                                            <a href="#"
+                                               class="text-indigo-600 hover:text-indigo-900 hover:underline"
+                                               onclick="deleteAgent({{ $agent->id }})">Delete</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500"
+                                        colspan="5">
+                                        No agent records found.
+                                    </td>
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-3">
+                            {{ $agents->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

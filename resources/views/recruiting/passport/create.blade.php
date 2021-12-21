@@ -47,20 +47,19 @@
                     <div class="px-4 py-5 sm:p-6">
                         <div class="space-y-6">
                             <div class="bg-white px-4 py-5 sm:rounded-lg sm:p-6">
-                                <div class="md:grid md:grid-cols-3 md:gap-6">
-                                    <div class="md:col-span-1">
+                                <div class="">
+                                    <div class="border-b border-gray-300 pb-8 mb-6">
                                         <h3 class="text-lg font-medium leading-6 text-gray-900">Cv
                                             Information</h3>
                                         <p class="mt-1 text-sm text-gray-500">Please enter the CV information
                                             for
                                             your user.</p>
                                     </div>
-                                    <div class="mt-5 md:mt-0 md:col-span-2">
+                                    <div class="mt-5 md:mt-0">
                                         <form action="{{ route('passport.store') }}" id="create_cv" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            <div class="grid grid-cols-3 gap-6">
-
-                                                <div class="col-span-6 sm:col-span-2">
+                                            <div class="grid md:grid-cols-2 gap-6 border-b border-gray-300 pb-8">
+                                                <div class="">
                                                     <label for="name" class="block text-sm font-medium text-gray-700">Passenger
                                                         Name <span class="text-red-500">*</span></label>
                                                     <input type="text" name="name" id="name" autocomplete="off"
@@ -68,7 +67,7 @@
                                                            required>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="phone_number"
                                                            class="block text-sm font-medium text-gray-700">Phone Number
                                                         <span class="text-red-500">*</span></label>
@@ -77,7 +76,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="gender"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
                                                     <select id="gender" name="gender" autocomplete="off"
@@ -90,7 +89,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="religion"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Religion</label>
                                                     <select id="religion" name="religion" autocomplete="off"
@@ -105,7 +104,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="date_of_birth"
                                                            class="block text-sm font-medium text-gray-700">Date of Birth
                                                         <span class="text-red-500">*</span></label>
@@ -115,7 +114,7 @@
                                                            required>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="place_of_birth"
                                                            class="block text-sm font-medium text-gray-700">Place of
                                                         Birth</label>
@@ -124,7 +123,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="birth_country"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Birth
                                                         Country</label>
@@ -137,21 +136,21 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="height" class="block text-sm font-medium text-gray-700">Height
                                                         (Inc)</label>
                                                     <input type="text" name="height" id="height" autocomplete="off"
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="weight" class="block text-sm font-medium text-gray-700">Weight
                                                         (Kg)</label>
                                                     <input type="text" name="weight" id="weight" autocomplete="off"
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="education"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Education</label>
                                                     <select id="education" name="education" autocomplete="off"
@@ -166,7 +165,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="profession"
                                                            class="block text-sm font-medium text-gray-700">Profession</label>
                                                     <input type="text" name="profession" id="profession"
@@ -174,13 +173,13 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="salary" class="block text-sm font-medium text-gray-700">Salary</label>
                                                     <input type="text" name="salary" id="salary" autocomplete="off"
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <div class="flex justify-between">
                                                         <label for="personal_image"
                                                                class="required block text-sm font-medium text-gray-700">Personal
@@ -193,7 +192,10 @@
                                                         png</p>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                            </div>
+
+                                            <div class="grid md:grid-cols-2 gap-6 border-b border-gray-300 py-8">
+                                                <div class="">
                                                     <label for="nid_number"
                                                            class="block text-sm font-medium text-gray-700">NID
                                                         Number</label>
@@ -202,7 +204,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="passport_number"
                                                            class="block text-sm font-medium text-gray-700">Passport
                                                         Number</label>
@@ -211,7 +213,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <div class="flex justify-between">
                                                         <label for="passport_image"
                                                                class="required block text-sm font-medium text-gray-700">Passport
@@ -224,7 +226,7 @@
                                                         png</p>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="passport_expired_date"
                                                            class="block text-sm font-medium text-gray-700">Passport
                                                         Expired Date</label>
@@ -234,7 +236,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="experience_country"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Experience
                                                         Country</label>
@@ -243,13 +245,13 @@
                                                             class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                                         <option value="" selected>Select</option>
                                                         <option value="0">Saudi</option>
-                                                        <option value="1">Katar</option>
+                                                        <option value="1">Qatar</option>
                                                         <option value="2">kuwait</option>
                                                         <option value="3">Dubai</option>
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="experience_years"
                                                            class="block text-sm font-medium text-gray-700">Experience
                                                         Years</label>
@@ -257,8 +259,10 @@
                                                            autocomplete="off"
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
+                                            </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                            <div class="grid md:grid-cols-2 gap-6 border-b border-gray-300 py-8">
+                                                <div class="">
                                                     <label for="father_name"
                                                            class="block text-sm font-medium text-gray-700">Father Name</label>
                                                     <input type="text" name="father_name" id="father_name"
@@ -266,7 +270,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="family_mobile_number"
                                                            class="block text-sm font-medium text-gray-700">Family Mobile Number</label>
                                                     <input type="number" name="family_mobile_number" id="family_mobile_number"
@@ -274,7 +278,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="visa_check_of"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Visa
                                                         Check office</label>
@@ -285,7 +289,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="visa_office"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Visa
                                                         Office</label>
@@ -293,13 +297,13 @@
                                                             class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                                         <option value="" selected>Select</option>
                                                         <option value="0">Saudi</option>
-                                                        <option value="1">Katar</option>
+                                                        <option value="1">Qatar</option>
                                                         <option value="2">kuwait</option>
                                                         <option value="3">Dubai</option>
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="visa_country"
                                                            class="block text-sm font-medium text-gray-700">Visa
                                                         Country</label>
@@ -308,7 +312,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="ttc"
                                                            class="block text-sm font-medium text-gray-700 mb-1">TTC</label>
                                                     <select id="ttc" name="ttc" autocomplete="off"
@@ -318,7 +322,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="medical_report"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Medical
                                                         Report</label>
@@ -329,7 +333,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="police_report"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Police
                                                         Report</label>
@@ -340,7 +344,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="mofa"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Mofa</label>
                                                     <select id="mofa" name="mofa" autocomplete="off"
@@ -350,7 +354,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="embassy"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Embassy</label>
                                                     <select id="embassy" name="embassy" autocomplete="off"
@@ -360,7 +364,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="finger"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Finger</label>
                                                     <select id="finger" name="finger" autocomplete="off"
@@ -370,7 +374,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="my-auto text-sm">
                                                     <label for="man_power"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Man
                                                         Power</label>
@@ -381,16 +385,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label for="work_area"
-                                                           class="block text-sm font-medium text-gray-700">Work
-                                                        Area</label>
-                                                    <input type="text" name="work_area" id="work_area"
-                                                           autocomplete="off"
-                                                           class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                </div>
-
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="agent"
                                                            class="block text-sm font-medium text-gray-700">Agent</label>
 
@@ -398,13 +393,24 @@
                                                             class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                                         <option value="" selected>Choose or search agent</option>
                                                         @foreach($agents as $agent)
-                                                        <option
-                                                            value="{{ $agent->id }}">{{ $agent->first_name. ' ' .$agent->last_name }}</option>
+                                                            <option
+                                                                value="{{ $agent->id }}">{{ $agent->first_name. ' ' .$agent->last_name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                            </div>
 
-                                                <div class="col-span-6 sm:col-span-3 my-auto text-sm">
+                                                <div class="grid md:grid-cols-2 gap-6 py-8">
+                                                    <div class="">
+                                                        <label for="work_area"
+                                                               class="block text-sm font-medium text-gray-700">Work
+                                                            Area</label>
+                                                        <input type="text" name="work_area" id="work_area"
+                                                               autocomplete="off"
+                                                               class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                    </div>
+
+                                                <div class="my-auto text-sm">
                                                     <label for="ticket"
                                                            class="block text-sm font-medium text-gray-700 mb-1">Ticket</label>
                                                     <select id="ticket" name="ticket" autocomplete="off"
@@ -414,7 +420,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="fly_date"
                                                            class="block text-sm font-medium text-gray-700">Fly
                                                         Date</label>
@@ -423,7 +429,7 @@
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="">
                                                     <label for="fly_date"
                                                            class="block text-sm font-medium text-gray-700">Fly
                                                         Time</label>
@@ -431,7 +437,6 @@
                                                            autocomplete="off"
                                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                                 </div>
-
                                             </div>
                                         </form>
                                     </div>
@@ -505,36 +510,5 @@
             height: 34px !important;
         }
     </style>
-
-    {{--    <script>--}}
-    {{--        $(document).ready(function() {--}}
-    {{--            $('#businessId').select2({--}}
-    {{--                width: '100%' // need to override the changed default--}}
-    {{--            });--}}
-    {{--        });--}}
-
-    {{--        function showOrHideExistingBusiness() {--}}
-    {{--            let userRole = document.getElementById('userRole').value;--}}
-    {{--            if(userRole == 2 || userRole == 3) {--}}
-    {{--                document.getElementById('existing_business_div').classList.remove('hidden');--}}
-    {{--            } else {--}}
-    {{--                document.getElementById('existing_business_div').classList.add('hidden');--}}
-    {{--            }--}}
-    {{--        }--}}
-    {{--    </script>--}}
-
-    {{--    <style type="text/css">--}}
-    {{--        .select2-selection__rendered {--}}
-    {{--            line-height: 31px !important;--}}
-    {{--        }--}}
-    {{--        .select2-container .select2-selection--single {--}}
-    {{--            border: 1px solid #D1D5DB;--}}
-    {{--            height: 38px !important;--}}
-    {{--            min-width: 100%;--}}
-    {{--        }--}}
-    {{--        .select2-selection__arrow {--}}
-    {{--            height: 34px !important;--}}
-    {{--        }--}}
-    {{--    </style>--}}
 
 @endsection

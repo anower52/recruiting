@@ -30,7 +30,7 @@ class AgentController extends Controller
         $agent->created_by = Auth::user()->id;
         $agent->save();
 
-        alert()->success('Success','New agent added successfully.');
+        alert()->success('Success', 'New agent added successfully.');
         return back();
     }
 
@@ -49,7 +49,7 @@ class AgentController extends Controller
         $agent->updated_by = Auth::user()->id;
         $agent->update();
 
-        alert()->success('Success','Agent information updated successfully.');
+        alert()->success('Success', 'Agent information updated successfully.');
 
         return back();
     }
@@ -59,8 +59,18 @@ class AgentController extends Controller
         $agent = Agent::find($agent_id);
         $agent->delete();
 
-        alert()->success('Success','Agent deleted successfully.');
+        alert()->success('Success', 'Agent deleted successfully.');
 
         return back();
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->q;
+
+        $agents = Agent::where('first_name', 'like', '%' . $request->q . '%')->orWhere('last_name', 'like', '%' . $request->q . '%')->orWhere('phone_number', 'like', '%' . $request->q . '%')->orWhere('district', 'like', '%' . $request->q . '%')->orderByDesc('id')->paginate(20);
+        $agents->appends(['q' => $request->q]);
+
+        return view('recruiting.agents.index', compact('agents', 'search'));
     }
 }
